@@ -1,0 +1,349 @@
+<html>
+<head>
+    <title>Python Quiz</title>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #3e76ca;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+            position: sticky;
+            top: 0;
+        }
+        nav h1 {
+            padding: 20px;
+        }
+        nav .timer {
+            padding: 10px 20px;
+            background: white;
+            color: black;
+            margin-right: 30px;
+            border-radius: 5px;
+        }
+        .hide {
+            display: none;
+        }
+
+        .options{
+            display: grid;
+            grid-template-column: 1fr;
+        }
+        h2 {
+            margin: 15px 0 30px 0;;
+        }
+        label {
+            border: 2px solid #3e76ca;
+            border-radius: 8px;
+            background: white;
+            padding: 10px;
+            margin: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all  0.5s;
+        }
+        label:hover {
+            background: #3e76ca;
+            color: white;
+        }
+        label input {
+            margin-right: 10px;
+        }
+        button {
+            cursor: pointer;
+            margin-left: 20px;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 20px;
+            border: none;
+            background: #3e76ca;
+            color: white;
+        }
+        .exp {
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .exp1 {
+            color: green;
+            background: #80f29f;
+            border-radius: 10px;
+        }
+        .exp2 {
+            color: red;
+            background: #f29080;
+            border-radius: 10px;
+        }
+        .question1,.question2,.question3,.question4,.question5,.question6,.question7,.question8,.question9,.question10{
+            margin: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            background: #eaeaea;
+            box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+        }
+
+        .result {
+            height: 100vh;
+            width: 100vw;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .result-card {
+            border-radius: 10px;
+            margin: 200px auto;
+            display: flex;
+            background: white;
+            font-size: 20px;
+            width: 50vw;
+            height: 35vh;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 30px;
+
+        }
+        .mark-this {
+            background: #3e76ca;
+        }
+        .result-card button {
+            cursor: pointer;
+            padding: 10px 30px;
+            margin: 0 auto;
+            font-size: 20px;
+            border: none;
+            background: #3e76ca;
+            color: white;
+            float: right;
+        }
+        .result-card a{
+        text-decoration : none;
+        color:white;
+        }
+        @media only screen and (max-width: 500px) {
+            body {
+               font-size: 20px;
+            }
+        }
+    </style>
+    {% load static %}
+    <script src="{% static 'score.js' %}" type="text/javascript"></script>
+</head>
+<body>
+
+<nav>
+    <h1>Quiz App</h1>
+    <h4 class = 'timer'>0 Mins: 0 Secs</h4>
+</nav>
+
+<div class = 'question1'>
+    <h2>Question 1</h2>
+    <h2>What is the maximum possible length of an identifier?</h2>
+    <div class = 'options1 options'>
+        <label forHtml = "q1opt1" ><input type="radio" onclick = "checkAnswere(1)" id = "q1opt1"  value = 'op1' name="q1">a) 8</label>
+        <label forHtml = "q1opt2" ><input type="radio"  onclick = "checkAnswere(1)" id = "q1opt2"  value = 'op2' name="q1">b) 16</label>
+        <label forHtml = "q1opt3" ><input type="radio" onclick = "checkAnswere(1)" id = "q1opt3"  value = 'op3' name="q1">c) 32</label>
+        <label forHtml = "q1opt4" ><input type="radio" class = 'correct1' onclick = "checkAnswere(1)" id = "q1opt4"  value = 'op4' name="q1">d) None of these</label>
+    </div>
+    <div class = 'q1explain1 exp exp1 hide'>
+        Your Answer is Correct
+    </div>
+    <div class = 'q1explain2 exp exp2 hide'>
+        Your Answer is wrong. Correct Answer is : d) None of these
+    </div>
+</div>
+
+
+
+
+<div class = 'question2'>
+<h2>Question 2</h2>
+<h2>Who developed the Python language?</h2>
+<div class = 'options2 options'>
+    <label forHtml = "q2opt1" ><input type="radio" class = 'correct2' onclick = "checkAnswere(2)" id = "q2opt1"  value = 'op1' name="q2">a) Guido van Rossum</label>
+    <label forHtml = "q2opt2" ><input type="radio" onclick = "checkAnswere(2)" id = "q2opt2"  value = 'op2' name="q2">b) Dennis Ritchie</label>
+    <label forHtml = "q2opt3" ><input type="radio" onclick = "checkAnswere(2)" id = "q2opt3"  value = 'op3' name="q2">c) Linus Torvalds</label>
+    <label forHtml = "q2opt4" ><input type="radio" onclick = "checkAnswere(2)" id = "q2opt4"  value = 'op4' name="q2">d) None of these</label>
+</div>
+
+<div class = 'q2explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q2explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is : a) Guido van Rossum
+</div>
+</div>
+
+<div class = 'question3'>
+<h2>Question 3</h2>
+<h2>Extension of Python File is </h2>
+<div class = 'options3 options'>
+    <label forHtml = "q3opt1" ><input type="radio" onclick = "checkAnswere(3)" id = "q3opt1"  value = 'op1' name="q3">a) .p</label>
+    <label forHtml = "q3opt2" ><input type="radio" class = 'correct3' onclick = "checkAnswere(3)" id = "q3opt2"  value = 'op2' name="q3">b) .py</label>
+    <label forHtml = "q3opt3" ><input type="radio" onclick = "checkAnswere(3)" id = "q3opt3"  value = 'op3' name="q3">c) .python</label>
+    <label forHtml = "q3opt4" ><input type="radio" onclick = "checkAnswere(3)" id = "q3opt4"  value = 'op4' name="q3">d) .pyt</label>
+</div>
+<div class = 'q3explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q3explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is: b) .py
+</div>
+</div>
+
+
+
+<div class = 'question4'>
+<h2>Question 4</h2>
+<h2>Comment Line in Python is </h2>
+<div class = 'options4 options'>
+    <label forHtml = "q4opt1" ><input type="radio" onclick = "checkAnswere(4)" id = "q4opt1"  value = 'op1' name="q4">a) \\</label>
+    <label forHtml = "q4opt2" ><input type="radio"  onclick = "checkAnswere(4)" id = "q4opt2"  value = 'op2' name="q4">b) //</label>
+    <label forHtml = "q4opt3" ><input type="radio" onclick = "checkAnswere(4)" id = "q4opt3"  value = 'op3' name="q4">c) *</label>
+    <label forHtml = "q4opt4" ><input type="radio" class = 'correct4' onclick = "checkAnswere(4)" id = "q4opt4"  value = 'op4' name="q4">d) #</label>
+</div>
+<div class = 'q4explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q4explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is : d) #
+</div>
+</div>
+
+<div class = 'question5'>
+<h2>Question 5</h2>
+<h2> Which of the following is not a keyword in Python?</h2>
+<div class = 'options5 options'>
+    <label forHtml = "q5opt1" ><input type="radio"  class = 'correct5' onclick = "checkAnswere(5)" id = "q5opt1"  value = 'op1' name="q5">a) val</label>
+    <label forHtml = "q5opt2" ><input type="radio" onclick = "checkAnswere(5)" id = "q5opt2"  value = 'op2' name="q5">b) class</label>
+    <label forHtml = "q5opt3" ><input type="radio" onclick = "checkAnswere(5)" id = "q5opt3"  value = 'op3' name="q5">c) def</label>
+    <label forHtml = "q5opt4" ><input type="radio" onclick = "checkAnswere(5)" id = "q5opt4"  value = 'op4' name="q5">d) try</label>
+</div>
+<div class = 'q5explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q5explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is : a) val.
+</div>
+</div>
+
+<div class = 'question6'>
+<h2>Question 6</h2>
+<h2>Which of the following functions is a built-in function in python language?</h2>
+<div class = 'options6 options'>
+    <label forHtml = "q6opt1" ><input type="radio" onclick = "checkAnswere(6)" id = "q6opt1"  value = 'op1' name="q6">a) Val()</label>
+    <label forHtml = "q6opt2" ><input type="radio" onclick = "checkAnswere(6)" id = "q6opt2"  value = 'op2' name="q6">b) printf()</label>
+    <label forHtml = "q6opt3" ><input type="radio" onclick = "checkAnswere(6)" id = "q6opt3"  value = 'op3' name="q6">c) println()</label>
+    <label forHtml = "q6opt4" ><input type="radio" class = 'correct6' onclick = "checkAnswere(6)" id = "q6opt4"  value = 'op4' name="q6">d) print()</label>
+</div>
+<div class = 'q6explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q6explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is : d) print()
+</div>
+</div>
+
+
+
+<div class = 'question7'>
+<h2>Question 7</h2>
+<h2>Which of the following option is not a core data type in the python language?</h2>
+<div class = 'options7 options'>
+    <label forHtml = "q7opt1" ><input type="radio" onclick = "checkAnswere(7)" id = "q7opt1"  value = 'op1' name="q7">a) Dictionary</label>
+    <label forHtml = "q7opt2" ><input type="radio" class = 'correct7' onclick = "checkAnswere(7)" id = "q7opt2"  value = 'op2' name="q7">b) Class</label>
+    <label forHtml = "q7opt3" ><input type="radio" onclick = "checkAnswere(7)" id = "q7opt3"  value = 'op3' name="q7">c) lists</label>
+    <label forHtml = "q7opt4" ><input type="radio" onclick = "checkAnswere(7)" id = "q7opt4"  value = 'op4' name="q7">d) None of these</label>
+</div>
+<div class = 'q7explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q7explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is : b) Class
+</div>
+</div>
+
+
+<div class = 'question8'>
+<h1>Question 8</h1>
+<h2>Which of the following arithmetic operators cannot be used with strings in python?</h2>
+<div class = 'options8 options'>
+    <label forHtml = "q8opt1" ><input type="radio" onclick = "checkAnswere(8)" id = "q8opt1"  value = 'op1' name="q8">a) +</label>
+    <label forHtml = "q8opt2" ><input type="radio" class = 'correct8' onclick = "checkAnswere(8)" id = "q8opt2"  value = 'op2' name="q8">b) -</label>
+    <label forHtml = "q8opt3" ><input type="radio" onclick = "checkAnswere(8)" id = "q8opt3"  value = 'op3' name="q8">c) *</label>
+    <label forHtml = "q8opt4" ><input type="radio" onclick = "checkAnswere(8)" id = "q8opt4"  value = 'op4' name="q8">d) All the Above</label>
+</div>
+<div class = 'q8explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q8explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct ANswer is : b) -
+</div>
+</div>
+
+
+<div class = 'question9'>
+<h2>Question 9</h2>
+<h2>PVM is often called </h2>
+<div class = 'options9 options'>
+    <label forHtml = "q9opt1" ><input type="radio" onclick = "checkAnswere(9)" id = "q9opt1"  value = 'op1' name="q9">a) Python Virtual Machine</label>
+    <label forHtml = "q9opt2" ><input type="radio"  onclick = "checkAnswere(9)" id = "q9opt2"  value = 'op2' name="q9">b) Python Virtual Machine code</label>
+    <label forHtml = "q9opt3" ><input type="radio" class = 'correct9' onclick = "checkAnswere(9)" id = "q9opt3"  value = 'op3' name="q9">c) Python Interpreter</label>
+    <label forHtml = "q9opt4" ><input type="radio" onclick = "checkAnswere(9)" id = "q9opt4"  value = 'op4' name="q9">d) None of these</label>
+</div>
+<div class = 'q9explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q9explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is : c) Python Interpreter
+</div>
+</div>
+
+
+<div class = 'question10'>
+<h2>Question 10</h2>
+<h2>Keyword used to declare function in Python is</h2>
+<div class = 'options10 options'>
+    <label forHtml = "q10opt1" ><input type="radio" onclick = "checkAnswere(10)" id = "q10opt1"  value = 'op1' name="q10">a) function</label>
+    <label forHtml = "q10opt2" ><input type="radio"  onclick = "checkAnswere(10)" id = "q10opt2"  value = 'op2' name="q10">b) func</label>
+    <label forHtml = "q10opt3" ><input type="radio" onclick = "checkAnswere(10)" id = "q10opt3"  value = 'op3' name="q10">c)functions</label>
+    <label forHtml = "q10opt4" ><input type="radio" class = 'correct10' onclick = "checkAnswere(10)" id = "q10opt4"  value = 'op4' name="q10">d) def</label>
+</div>
+<div class = 'q10explain1 exp exp1 hide'>
+Your Answer is Correct
+</div>
+<div class = 'q10explain2 exp exp2 hide'>
+    Your Answer is wrong. Correct Answer is : d) def
+</div>
+</div>
+
+
+
+<button class = 'submit' type="submit" onclick="endtest()">End Test</button>
+
+<div class = 'result'>
+<div class = 'result-card'>
+    <div class = 'time-taken'>
+        <p>Time Taken: </p>
+        <h4 class = 'time'></h4>
+    </div>
+    <div class = 'score'>
+        <p>Score: </p>
+        <h4 class = 'mark'></h4>
+    </div>
+    <button><a href="{% url 'end'%}">OK</a></button>
+</div>
+</div>
+</body>
+</html>
