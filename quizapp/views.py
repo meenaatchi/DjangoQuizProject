@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from quizapp.models import Newuser
 from django.contrib import messages
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, auth
 
 
 def index(request):
@@ -27,13 +27,13 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         Newuser(username=username, email=email, password=password).save()
-        messages.success(request, 'Registration done Successfully')
+        # messages.success(request, 'Registration done Successfully')
         return render(request, 'index.html')
     else:
         return render(request, 'registration.html')
 
 
-def login(request):
+def signup(request):
     if request.method == "POST":
         try:
             userdetails = Newuser.objects.get(username=request.POST['username'], password=request.POST['password'])

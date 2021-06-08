@@ -72,15 +72,28 @@ WSGI_APPLICATION = 'quizproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'quizdb',
+#         'USER': 'root',
+#         'PASSWORD': 'Genius',
+#         'PORT': 3306,
+#         'HOST': '127.0.0.1',
+#
+#     }
+# }
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'quizdb',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': 'Genius',
-        'PORT': 3306,
-        'HOST': '127.0.0.1',
+        'PORT': 5432,
+        'HOST': 'localhost',
 
     }
 }
@@ -118,11 +131,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# STATICFILES_DIRS = [
+#      os.path.join(BASE_DIR, "static")
+# ]
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
