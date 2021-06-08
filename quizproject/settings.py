@@ -86,14 +86,27 @@ WSGI_APPLICATION = 'quizproject.wsgi.application'
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'quizdb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Genius',
+#         'PORT': 5432,
+#         'HOST': 'localhost',
+
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'quizdb',
-        'USER': 'postgres',
-        'PASSWORD': 'Genius',
+        'NAME': 'dc7nu7ur8u32iu',
+        'USER': 'tytdcyuvacxzmb',
+        'PASSWORD': 'f034a7f7df618a6f8f5957a5dd84ec20cc978b529a9fa10f22fae9f795e6d817',
         'PORT': 5432,
-        'HOST': 'localhost',
+        'HOST': 'ec2-52-17-1-206.eu-west-1.compute.amazonaws.com',
 
     }
 }
